@@ -1,0 +1,22 @@
+
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true,
+        "jsx": "react",
+        "target": "es5",
+        "module": "esnext", // maptalk按需加载的实现
+        "moduleResolution": "node", // 增加"module": "esnext"节点后import antd报错,添加该配置节点后解决
+
+        // 使用new Promise不识别的问题
+        "lib": [
+            "es6",
+            "dom"
+          ],
+        // 该节点的作用是可以使组件导入时使用简单路径,和webpack.config.js的alias配置节点结合使用
+        "baseUrl": ".",
+        "paths": {
+            "@components/*": ["./src/components/*"],
+        }
+    }
+}
